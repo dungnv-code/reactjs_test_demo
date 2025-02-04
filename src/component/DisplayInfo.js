@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './DisplayInfo.scss'
 import logo from '../logo.svg'
+import { use } from "react";
 // class DisplayInfo extends React.Component {
 
 //     render() {
@@ -9,7 +10,6 @@ import logo from '../logo.svg'
 //         return (
 
 //             <div className="Display_info">
-
 //                 {true && <div >
 //                     {listuser.map((item, index) => {
 //                         return (
@@ -36,6 +36,12 @@ function DisplayInfo(props) {
     const hanleIsshow = () => {
         setisShow(!isShow);
     }
+    console.log("render");
+
+    useEffect(() => {
+        setTimeout(() => { document.title = "Nguyen van a" }, 3000)
+        console.log("call me effect");
+    })
 
     return (
         <div className="Display_info">
